@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -672,12 +674,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2qx-nU-H5M">
-                                <rect key="frame" x="0.0" y="20" width="250" height="250"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="IsC-vN-F2k"/>
-                            </imageView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-dE-K85">
-                                <rect key="frame" x="344" y="222" width="122" height="32"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-dE-K85">
+                                <rect key="frame" x="346" y="222" width="120" height="32"/>
                                 <buttonCell key="cell" type="push" title="Select Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eLA-on-mSu">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -686,7 +684,23 @@
                                     <action selector="buttonSelectFolder:" target="XfG-lQ-9wD" id="qu5-cI-Pgq"/>
                                 </connections>
                             </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="2qx-nU-H5M">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2qx-nU-H5M" secondAttribute="height" multiplier="1:1" id="gPs-bz-Kcc"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="IsC-vN-F2k"/>
+                            </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="v7C-dE-K85" secondAttribute="trailing" constant="20" id="Pq4-Sg-pUe"/>
+                            <constraint firstAttribute="bottom" secondItem="2qx-nU-H5M" secondAttribute="bottom" id="TTh-DW-fpO"/>
+                            <constraint firstItem="v7C-dE-K85" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="c6P-fu-aoH"/>
+                            <constraint firstItem="v7C-dE-K85" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2qx-nU-H5M" secondAttribute="trailing" constant="8" id="ncu-m1-KHR"/>
+                            <constraint firstItem="2qx-nU-H5M" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="uvc-jt-jvc"/>
+                            <constraint firstItem="2qx-nU-H5M" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" id="xuP-hV-xaL"/>
+                            <constraint firstItem="2qx-nU-H5M" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="yw6-A3-krP"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageViewOutput" destination="2qx-nU-H5M" id="ydX-Pv-DfK"/>
